@@ -12,8 +12,33 @@
     <input asp-for="Dni" type="Dni" class="form-control" id="Dni">
   </div>
   <button type="submit" 
-  class="btn btn-primary">Consultar</button>
+    class="btn btn-primary" 
+    asp-controller="Home" asp-action="Opcion1">Opcion 1</button>
+  <button type="submit" 
+    class="btn btn-primary" 
+    asp-controller="Home" asp-action="Opcion2">Opcion 2</button>
+
 </form>
  <h1>@ViewData["Message"]</h1>
+<div>
+    <h4 class="">Persona</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 text-danger">
+            @Html.DisplayFor(model => model.Nombre)
+        </dt>
+        <dt class = "col-sm-2 ">
+            @Html.DisplayFor(model => model.Apellido)
+        </dt>
+        <dt class = "col-sm-2">
+            @Html.DisplayFor(model => model.Genero)
+        </dt>
+        <dt class = "col-sm-2">
+            @Html.DisplayFor(model => model.FechaVencimiento)
+        </dt>        
+    </dl>
+</div>
+
+
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

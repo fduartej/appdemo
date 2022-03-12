@@ -18,10 +18,32 @@ public class HomeController : Controller
         return View();
     }
 
-   public IActionResult Consultar(Persona p)
+   public IActionResult Opcion1(Persona p)
     {
-        ViewData["Message"] = "Hola soy un action "+p.Dni;
-        return View("Index");
+        Opciones(p,"Op1");
+        ViewData["Message"] = "Hola estos son mis datos ";
+        return View("Index", p);
+    }
+
+   public IActionResult Opcion2(Persona p)
+    {
+        Opciones(p,"Op2");
+        ViewData["Message"] = "Hola estos son mis datos ";
+        return View("Index", p);
+    }
+
+    private void Opciones(Persona p, String opcion){
+        if(opcion=="Op1"){
+            p.Nombre = "Juan";
+            p.Apellido = "Perez";
+            p.Genero = "Masculino";
+            p.FechaVencimiento = new DateTime();
+        }else{
+            p.Nombre = "Juana";
+            p.Apellido = "Perea";
+            p.Genero = "Femenino";
+            p.FechaVencimiento = new DateTime();
+        }
     }
 
     public IActionResult Privacy()
